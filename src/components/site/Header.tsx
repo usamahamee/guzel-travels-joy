@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/logo.png";
 
 const services = [
   { to: "/flight-booking", label: "Flight Booking" },
@@ -22,10 +23,10 @@ export function Header() {
         </a>
       </div>
       <nav className="bg-[var(--navy)] text-white">
-        <div className="container-wide flex items-center justify-between px-5 py-4">
-          <Link to="/" className="font-hero text-2xl sm:text-3xl font-bold text-[var(--gold)] tracking-widest">
-            GUZEL <span className="text-white">TRAVELS</span>
-          </Link>
+        <div className="container-wide flex items-center justify-between px-5 py-0">
+          <Link to="/">
+  <img src="/src/assets/logo.png" alt="Guzel Travels" className="h-25 w-auto" />
+</Link>
 
           <ul className="hidden lg:flex items-center gap-9 text-sm uppercase tracking-wider font-medium">
             <li>
