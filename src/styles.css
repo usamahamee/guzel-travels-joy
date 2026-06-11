@@ -152,5 +152,82 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
   }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    color: var(--navy);
+  }
+
+  html { scroll-behavior: smooth; }
 }
+
+@utility font-hero { font-family: var(--font-hero); letter-spacing: 0.08em; }
+@utility font-heading { font-family: var(--font-heading); }
+@utility font-subhead { font-family: var(--font-subhead); }
+@utility font-body { font-family: var(--font-body); }
+
+@utility btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.875rem 1.75rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px -8px rgba(245, 166, 35, 0.5);
+  font-size: 0.875rem;
+}
+@utility btn-gold {
+  &:hover { background: #e0951a; transform: translateY(-2px); box-shadow: 0 12px 28px -8px rgba(245, 166, 35, 0.6); }
+}
+
+@utility btn-navy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--navy);
+  color: white;
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.875rem 1.75rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+}
+@utility btn-navy {
+  &:hover { background: var(--navy-dark); transform: translateY(-2px); }
+}
+
+@utility section-pad { padding: 5rem 1.25rem; }
+@utility container-wide { max-width: 1200px; margin-inline: auto; }
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+@utility pulse-ring { animation: pulse-ring 2s infinite; }
+
+@keyframes ken-burns {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1.18); }
+}
+@utility animate-ken-burns { animation: ken-burns 8s ease-out forwards; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@utility animate-fade-up { animation: fade-up 0.7s ease-out both; }
