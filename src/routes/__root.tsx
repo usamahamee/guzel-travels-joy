@@ -105,11 +105,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "Guzel Travels — Flights, Visas, Umrah & Car Rentals in Lahore" },
       { property: "og:description", content: "Guzel Travels offers cheap flights, visa consultancy, Umrah packages and luxury car rentals across Pakistan and worldwide." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "Guzel Travels — Flights, Visas, Umrah & Car Rentals in Lahore" },
-      { name: "twitter:description", content: "Guzel Travels offers cheap flights, visa consultancy, Umrah packages and luxury car rentals across Pakistan and worldwide." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f0dd5e56-ac41-4969-b7a8-177cd5548bb3/id-preview-247a7b11--e14dc9ea-f567-422b-93b7-9c2114344922.lovable.app-1781206986149.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f0dd5e56-ac41-4969-b7a8-177cd5548bb3/id-preview-247a7b11--e14dc9ea-f567-422b-93b7-9c2114344922.lovable.app-1781206986149.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

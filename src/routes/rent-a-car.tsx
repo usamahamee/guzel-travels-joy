@@ -9,20 +9,26 @@ export const Route = createFileRoute("/rent-a-car")({
       { name: "description", content: "Luxury and economical car rentals in Lahore — Honda Civic, Toyota Prado, Land Cruiser, Audi A6, Corolla Altis, Toyota Yaris with skilled drivers." },
       { property: "og:title", content: "Rent a Car in Lahore | Guzel Travels" },
       { property: "og:description", content: "Premium and economical rentals with drivers in Lahore and across Pakistan." },
-      { property: "og:url", content: "/rent-a-car" },
+      { property: "og:url", content: "https://guzeltravels.com/rent-a-car" },
+      { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Rent a Car in Lahore | Guzel Travels" },
+      { name: "twitter:description", content: "Premium and economical rentals with drivers in Lahore and across Pakistan." },
+      { name: "twitter:image", content: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80" },
     ],
-    links: [{ rel: "canonical", href: "/rent-a-car" }],
+    links: [{ rel: "canonical", href: "https://guzeltravels.com/rent-a-car" }],
   }),
   component: Page,
 });
 
 const CARS = [
-  { name: "Honda Civic", img: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80" },
-  { name: "Toyota Prado", img: "https://images.unsplash.com/photo-1594787318286-3d835c1d207f?auto=format&fit=crop&w=800&q=80" },
-  { name: "Land Cruiser", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" },
-  { name: "Audi A6", img: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&q=80" },
-  { name: "Corolla Altis", img: "https://images.unsplash.com/photo-1623869675781-289aef1b46e6?auto=format&fit=crop&w=800&q=80" },
-  { name: "Toyota Yaris", img: "https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=800&q=80" },
+  { name: "Honda Civic", img: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&q=80" },
+  { name: "Toyota Prado", img: "https://images.unsplash.com/photo-1606664911253-fa92e7e6c69e?auto=format&fit=crop&w=800&q=80" },
+  { name: "Land Cruiser", img: "https://images.unsplash.com/photo-1519440232540-ca15a0c89aaa?auto=format&fit=crop&w=800&q=80" },
+  { name: "Audi A6", img: "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?auto=format&fit=crop&w=800&q=80" },
+  { name: "Corolla Altis", img: "https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=800&q=80" },
+  { name: "Toyota Yaris", img: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=800&q=80" },
 ];
 
 function Page() {
