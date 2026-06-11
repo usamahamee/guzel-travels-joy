@@ -25,7 +25,7 @@ export function Header() {
       <nav className="bg-[var(--navy)] text-white">
         <div className="container-wide flex items-center justify-between px-5 py-0">
           <Link to="/">
-  <img src="/src/assets/logo.png" alt="Guzel Travels" className="h-25 w-auto" />
+  <img src={logo} alt="Guzel Travels" className="h-25 w-auto" />
 </Link>
 
           <ul className="hidden lg:flex items-center gap-9 text-sm uppercase tracking-wider font-medium">
