@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VisaConsultancyRouteImport } from './routes/visa-consultancy'
 import { Route as UmrahPackagesRouteImport } from './routes/umrah-packages'
+import { Route as RentACarRouteImport } from './routes/rent-a-car'
 import { Route as FlightBookingRouteImport } from './routes/flight-booking'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -22,6 +23,11 @@ const VisaConsultancyRoute = VisaConsultancyRouteImport.update({
 const UmrahPackagesRoute = UmrahPackagesRouteImport.update({
   id: '/umrah-packages',
   path: '/umrah-packages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RentACarRoute = RentACarRouteImport.update({
+  id: '/rent-a-car',
+  path: '/rent-a-car',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FlightBookingRoute = FlightBookingRouteImport.update({
@@ -38,12 +44,14 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/flight-booking': typeof FlightBookingRoute
+  '/rent-a-car': typeof RentACarRoute
   '/umrah-packages': typeof UmrahPackagesRoute
   '/visa-consultancy': typeof VisaConsultancyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/flight-booking': typeof FlightBookingRoute
+  '/rent-a-car': typeof RentACarRoute
   '/umrah-packages': typeof UmrahPackagesRoute
   '/visa-consultancy': typeof VisaConsultancyRoute
 }
@@ -51,18 +59,30 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/flight-booking': typeof FlightBookingRoute
+  '/rent-a-car': typeof RentACarRoute
   '/umrah-packages': typeof UmrahPackagesRoute
   '/visa-consultancy': typeof VisaConsultancyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/flight-booking' | '/umrah-packages' | '/visa-consultancy'
+  fullPaths:
+    | '/'
+    | '/flight-booking'
+    | '/rent-a-car'
+    | '/umrah-packages'
+    | '/visa-consultancy'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/flight-booking' | '/umrah-packages' | '/visa-consultancy'
+  to:
+    | '/'
+    | '/flight-booking'
+    | '/rent-a-car'
+    | '/umrah-packages'
+    | '/visa-consultancy'
   id:
     | '__root__'
     | '/'
     | '/flight-booking'
+    | '/rent-a-car'
     | '/umrah-packages'
     | '/visa-consultancy'
   fileRoutesById: FileRoutesById
@@ -70,6 +90,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FlightBookingRoute: typeof FlightBookingRoute
+  RentACarRoute: typeof RentACarRoute
   UmrahPackagesRoute: typeof UmrahPackagesRoute
   VisaConsultancyRoute: typeof VisaConsultancyRoute
 }
@@ -88,6 +109,13 @@ declare module '@tanstack/react-router' {
       path: '/umrah-packages'
       fullPath: '/umrah-packages'
       preLoaderRoute: typeof UmrahPackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rent-a-car': {
+      id: '/rent-a-car'
+      path: '/rent-a-car'
+      fullPath: '/rent-a-car'
+      preLoaderRoute: typeof RentACarRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/flight-booking': {
@@ -110,6 +138,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FlightBookingRoute: FlightBookingRoute,
+  RentACarRoute: RentACarRoute,
   UmrahPackagesRoute: UmrahPackagesRoute,
   VisaConsultancyRoute: VisaConsultancyRoute,
 }
