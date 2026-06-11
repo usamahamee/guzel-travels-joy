@@ -4,12 +4,30 @@ import { Car, Sparkles, BadgePercent } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 
 const CARS = [
-  { name: "Honda Civic", img: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&q=80" },
-  { name: "Toyota Prado", img: "https://images.unsplash.com/photo-1606664911253-fa92e7e6c69e?auto=format&fit=crop&w=800&q=80" },
-  { name: "Land Cruiser", img: "https://images.unsplash.com/photo-1519440232540-ca15a0c89aaa?auto=format&fit=crop&w=800&q=80" },
-  { name: "Audi A6", img: "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?auto=format&fit=crop&w=800&q=80" },
-  { name: "Corolla Altis", img: "https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=800&q=80" },
-  { name: "Toyota Yaris", img: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=800&q=80" },
+  { 
+    name: "Honda Civic", 
+    img: "https://images.pexels.com/photos/25637368/pexels-photo-25637368.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  { 
+    name: "Toyota Prado", 
+    img: "https://images.pexels.com/photos/20363276/pexels-photo-20363276.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  { 
+    name: "Land Cruiser", 
+    img: "https://images.pexels.com/photos/1683519/pexels-photo-1683519.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  { 
+    name: "Audi A6", 
+    img: "https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  { 
+    name: "Corolla Altis", 
+    img: "https://images.pexels.com/photos/19818792/pexels-photo-19818792.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  { 
+    name: "Toyota Yaris", 
+    img: "https://images.pexels.com/photos/5733711/pexels-photo-5733711.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
 ];
 
 export default function RentACar() {
