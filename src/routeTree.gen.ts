@@ -9,9 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VisaConsultancyRouteImport } from './routes/visa-consultancy'
 import { Route as FlightBookingRouteImport } from './routes/flight-booking'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VisaConsultancyRoute = VisaConsultancyRouteImport.update({
+  id: '/visa-consultancy',
+  path: '/visa-consultancy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FlightBookingRoute = FlightBookingRouteImport.update({
   id: '/flight-booking',
   path: '/flight-booking',
@@ -26,31 +32,42 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/flight-booking': typeof FlightBookingRoute
+  '/visa-consultancy': typeof VisaConsultancyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/flight-booking': typeof FlightBookingRoute
+  '/visa-consultancy': typeof VisaConsultancyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/flight-booking': typeof FlightBookingRoute
+  '/visa-consultancy': typeof VisaConsultancyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/flight-booking'
+  fullPaths: '/' | '/flight-booking' | '/visa-consultancy'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/flight-booking'
-  id: '__root__' | '/' | '/flight-booking'
+  to: '/' | '/flight-booking' | '/visa-consultancy'
+  id: '__root__' | '/' | '/flight-booking' | '/visa-consultancy'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FlightBookingRoute: typeof FlightBookingRoute
+  VisaConsultancyRoute: typeof VisaConsultancyRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/visa-consultancy': {
+      id: '/visa-consultancy'
+      path: '/visa-consultancy'
+      fullPath: '/visa-consultancy'
+      preLoaderRoute: typeof VisaConsultancyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/flight-booking': {
       id: '/flight-booking'
       path: '/flight-booking'
@@ -71,6 +88,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FlightBookingRoute: FlightBookingRoute,
+  VisaConsultancyRoute: VisaConsultancyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
