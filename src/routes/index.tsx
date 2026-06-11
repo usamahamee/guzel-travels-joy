@@ -13,9 +13,13 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Book cheap flights, apply for visas, plan your Umrah journey and rent luxury cars in Lahore with Guzel Travels. 5+ years of trusted service." },
       { property: "og:title", content: "Guzel Travels — Your Trusted Travel Partner" },
       { property: "og:description", content: "Flights, visas, Umrah packages and rentals from Lahore, Pakistan." },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://guzeltravels.com/" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Guzel Travels — Your Trusted Travel Partner" },
+      { name: "twitter:description", content: "Flights, visas, Umrah packages and rentals from Lahore, Pakistan." },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://guzeltravels.com/" }],
     scripts: [
       {
         type: "application/ld+json",
