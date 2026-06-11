@@ -4,6 +4,7 @@ import { Plane, FileCheck2, MapPin, Car, ArrowRight } from "lucide-react";
 import { HeroSlider } from "@/components/site/HeroSlider";
 import { QuoteForm } from "@/components/site/QuoteForm";
 import { FAQ } from "@/components/site/FAQ";
+import { Testimonials } from "@/components/site/Testimonials";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -114,6 +115,8 @@ function Index() {
           </div>
         </div>
       </section>
+
+      <Testimonials />
     </>
   );
 }
