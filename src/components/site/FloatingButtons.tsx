@@ -2,7 +2,7 @@ import { Phone, MessageCircle } from "lucide-react";
 
 export function FloatingButtons() {
   return (
-    <div className="fixed right-4 bottom-5 z-50 flex flex-col gap-3">
+    <div className="fixed right-4 bottom-24 sm:bottom-20 z-50 flex flex-col gap-3 animate-fade-up">
       <a
         href="tel:+923021400045"
         aria-label="Call Us"
