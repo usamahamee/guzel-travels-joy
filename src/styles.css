@@ -164,6 +164,13 @@
   }
 
   html { scroll-behavior: smooth; }
+
+  a, button { transition: color .25s ease, background-color .25s ease, transform .25s ease, box-shadow .25s ease, opacity .25s ease; }
+  img { transition: transform .6s cubic-bezier(.2,.7,.2,1), opacity .4s ease; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  }
 }
 
 @utility font-hero { font-family: var(--font-hero); letter-spacing: 0.08em; }
