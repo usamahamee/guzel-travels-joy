@@ -1,51 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Plane, FileCheck2, MapPin, Car, ArrowRight } from "lucide-react";
 import { HeroSlider } from "@/components/site/HeroSlider";
 import { QuoteForm } from "@/components/site/QuoteForm";
 import { FAQ } from "@/components/site/FAQ";
 import { Testimonials } from "@/components/site/Testimonials";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Guzel Travels — Flights, Visas, Umrah & Car Rentals in Lahore" },
-      { name: "description", content: "Book cheap flights, apply for visas, plan your Umrah journey and rent luxury cars in Lahore with Guzel Travels. 5+ years of trusted service." },
-      { property: "og:title", content: "Guzel Travels — Your Trusted Travel Partner" },
-      { property: "og:description", content: "Flights, visas, Umrah packages and rentals from Lahore, Pakistan." },
-      { property: "og:url", content: "https://guzeltravels.com/" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Guzel Travels — Your Trusted Travel Partner" },
-      { name: "twitter:description", content: "Flights, visas, Umrah packages and rentals from Lahore, Pakistan." },
-    ],
-    links: [{ rel: "canonical", href: "https://guzeltravels.com/" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "TravelAgency",
-          name: "Guzel Travels",
-          telephone: "+92-302-1400045",
-          email: "info@guzeltravels.com",
-          url: "https://guzeltravels.com",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "Plot No 66, Usman Block, Near LMDC, Canal Bank",
-            addressLocality: "Lahore",
-            addressCountry: "PK",
-          },
-          sameAs: [
-            "https://web.facebook.com/Guzeltravels",
-            "https://www.instagram.com/guzeltravels/",
-          ],
-        }),
-      },
-    ],
-  }),
-  component: Index,
-});
 
 const SERVICES = [
   { to: "/flight-booking", icon: Plane, title: "Flight Booking", desc: "Real-time flight & travel professionals. Best fares, complimentary upgrades, seat selection." },
@@ -54,12 +13,24 @@ const SERVICES = [
   { to: "/rent-a-car", icon: Car, title: "Rent a Car", desc: "Luxury & economical cars with skilled drivers across Lahore and Pakistan." },
 ];
 
-function Index() {
+export default function Home() {
   return (
     <>
+      <Helmet>
+        <title>Guzel Travels — Flights, Visas, Umrah & Car Rentals in Lahore</title>
+        <meta name="description" content="Book cheap flights, apply for visas, plan your Umrah journey and rent luxury cars in Lahore with Guzel Travels. 5+ years of trusted service." />
+        <link rel="canonical" href="https://guzeltravels.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Guzel Travels — Your Trusted Travel Partner" />
+        <meta property="og:description" content="Flights, visas, Umrah packages and rentals from Lahore, Pakistan." />
+        <meta property="og:url" content="https://guzeltravels.com/" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Guzel Travels — Your Trusted Travel Partner" />
+        <meta name="twitter:description" content="Flights, visas, Umrah packages and rentals from Lahore, Pakistan." />
+      </Helmet>
+
       <HeroSlider />
 
-      {/* Stats */}
       <section className="bg-[var(--navy)] text-white">
         <div className="container-wide grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10">
           <div className="bg-[var(--gold)] text-[var(--navy)] px-8 py-12">
@@ -77,7 +48,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Services */}
       <section className="section-pad container-wide">
         <div className="text-center mb-14">
           <p className="font-subhead italic text-[var(--gold)] text-xl mb-2">What we offer</p>
@@ -104,7 +74,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Quote + FAQ */}
       <section className="bg-[var(--gold-soft)] section-pad">
         <div className="container-wide grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="bg-[var(--gold)] rounded-3xl p-8 sm:p-10 shadow-xl">

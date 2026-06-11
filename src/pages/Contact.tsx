@@ -1,30 +1,25 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Helmet } from "react-helmet-async";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { QuoteForm } from "@/components/site/QuoteForm";
 import { FAQ } from "@/components/site/FAQ";
 
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact Guzel Travels — Lahore Travel Agency" },
-      { name: "description", content: "Call +92 302 1400045 or email info@guzeltravels.com. Branch & head office in DHA and Canal Bank, Lahore." },
-      { property: "og:title", content: "Contact Guzel Travels" },
-      { property: "og:description", content: "Get in touch with our team in Lahore." },
-      { property: "og:url", content: "https://guzeltravels.com/contact" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "Contact Guzel Travels" },
-      { name: "twitter:description", content: "Get in touch with our team in Lahore." },
-    ],
-    links: [{ rel: "canonical", href: "https://guzeltravels.com/contact" }],
-  }),
-  component: Page,
-});
-
-function Page() {
+export default function Contact() {
   return (
     <>
+      <Helmet>
+        <title>Contact Guzel Travels — Lahore Travel Agency</title>
+        <meta name="description" content="Call +92 302 1400045 or email info@guzeltravels.com. Branch & head office in DHA and Canal Bank, Lahore." />
+        <link rel="canonical" href="https://guzeltravels.com/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Contact Guzel Travels" />
+        <meta property="og:description" content="Get in touch with our team in Lahore." />
+        <meta property="og:url" content="https://guzeltravels.com/contact" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Contact Guzel Travels" />
+        <meta name="twitter:description" content="Get in touch with our team in Lahore." />
+      </Helmet>
+
       <PageHero
         title="Contact Us"
         subtitle="We'd love to hear from you"

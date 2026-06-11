@@ -1,26 +1,7 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Car, Sparkles, BadgePercent } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
-
-export const Route = createFileRoute("/rent-a-car")({
-  head: () => ({
-    meta: [
-      { title: "Rent a Car in Lahore | Guzel Travels" },
-      { name: "description", content: "Luxury and economical car rentals in Lahore — Honda Civic, Toyota Prado, Land Cruiser, Audi A6, Corolla Altis, Toyota Yaris with skilled drivers." },
-      { property: "og:title", content: "Rent a Car in Lahore | Guzel Travels" },
-      { property: "og:description", content: "Premium and economical rentals with drivers in Lahore and across Pakistan." },
-      { property: "og:url", content: "https://guzeltravels.com/rent-a-car" },
-      { property: "og:type", content: "website" },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Rent a Car in Lahore | Guzel Travels" },
-      { name: "twitter:description", content: "Premium and economical rentals with drivers in Lahore and across Pakistan." },
-      { name: "twitter:image", content: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80" },
-    ],
-    links: [{ rel: "canonical", href: "https://guzeltravels.com/rent-a-car" }],
-  }),
-  component: Page,
-});
 
 const CARS = [
   { name: "Honda Civic", img: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&q=80" },
@@ -31,9 +12,24 @@ const CARS = [
   { name: "Toyota Yaris", img: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=800&q=80" },
 ];
 
-function Page() {
+export default function RentACar() {
   return (
     <>
+      <Helmet>
+        <title>Rent a Car in Lahore | Guzel Travels</title>
+        <meta name="description" content="Luxury and economical car rentals in Lahore — Honda Civic, Toyota Prado, Land Cruiser, Audi A6, Corolla Altis, Toyota Yaris with skilled drivers." />
+        <link rel="canonical" href="https://guzeltravels.com/rent-a-car" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Rent a Car in Lahore | Guzel Travels" />
+        <meta property="og:description" content="Premium and economical rentals with drivers in Lahore and across Pakistan." />
+        <meta property="og:url" content="https://guzeltravels.com/rent-a-car" />
+        <meta property="og:image" content="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Rent a Car in Lahore | Guzel Travels" />
+        <meta name="twitter:description" content="Premium and economical rentals with drivers in Lahore and across Pakistan." />
+        <meta name="twitter:image" content="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80" />
+      </Helmet>
+
       <PageHero
         title="Rent a Car in Lahore With Guzel Travels"
         subtitle="Our Fleet"
@@ -48,7 +44,7 @@ function Page() {
               We offer top-notch car rental services for your travels with skilled drivers well-versed in Lahore's routes. Whether it's a business trip, airport transfer or a wedding — Guzel Travels ensures the best experience.
             </p>
             <p className="leading-relaxed text-foreground/80">
-              Our service includes access to the finest food options in Lahore and across Pakistan. Count on us for competitive rates and high-quality vehicles.
+              Count on us for competitive rates and high-quality vehicles across Lahore and Pakistan.
             </p>
           </div>
           <div className="space-y-5">

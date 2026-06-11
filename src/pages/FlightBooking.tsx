@@ -1,33 +1,29 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Plane, Globe, MapPin } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
-
-export const Route = createFileRoute("/flight-booking")({
-  head: () => ({
-    meta: [
-      { title: "Cheap Flight Booking in Pakistan | Guzel Travels" },
-      { name: "description", content: "Book cheap domestic and international flights from Pakistan with Guzel Travels. Best fares on PIA, Air Sial, Serene Air, Emirates, Qatar and more." },
-      { property: "og:title", content: "Cheap Flights with Guzel Travels" },
-      { property: "og:description", content: "Hassle-free flight booking with the best fares in Pakistan." },
-      { property: "og:url", content: "https://guzeltravels.com/flight-booking" },
-      { property: "og:type", content: "website" },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Cheap Flights with Guzel Travels" },
-      { name: "twitter:description", content: "Hassle-free flight booking with the best fares in Pakistan." },
-      { name: "twitter:image", content: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80" },
-    ],
-    links: [{ rel: "canonical", href: "https://guzeltravels.com/flight-booking" }],
-  }),
-  component: Page,
-});
 
 const DOMESTIC = ["PIA", "Air Sial", "Serene Air", "Air Blue"];
 const INTL = ["Emirates", "Qatar Airways", "Turkish Airlines", "Etihad", "Saudia", "Gulf Air"];
 
-function Page() {
+export default function FlightBooking() {
   return (
     <>
+      <Helmet>
+        <title>Cheap Flight Booking in Pakistan | Guzel Travels</title>
+        <meta name="description" content="Book cheap domestic and international flights from Pakistan with Guzel Travels. Best fares on PIA, Air Sial, Serene Air, Emirates, Qatar and more." />
+        <link rel="canonical" href="https://guzeltravels.com/flight-booking" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Cheap Flights with Guzel Travels" />
+        <meta property="og:description" content="Hassle-free flight booking with the best fares in Pakistan." />
+        <meta property="og:url" content="https://guzeltravels.com/flight-booking" />
+        <meta property="og:image" content="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Cheap Flights with Guzel Travels" />
+        <meta name="twitter:description" content="Hassle-free flight booking with the best fares in Pakistan." />
+        <meta name="twitter:image" content="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80" />
+      </Helmet>
+
       <PageHero
         title="Cheap Flights with Guzel Travels"
         subtitle="Flight Booking"
@@ -39,7 +35,7 @@ function Page() {
             <p className="font-subhead italic text-[var(--gold)] text-lg mb-1">Why choose us</p>
             <h2 className="font-heading text-3xl sm:text-4xl text-[var(--navy)] mb-5">Skip the queue, fly for less</h2>
             <p className="leading-relaxed text-foreground/80 mb-4">
-              Tired of waiting in long queues at booking counters? Guzel Travels is your one-stop online e-ticketing platform offering cost-effective options for both domestic and international travel. Backed by years in the industry, we ensure convenience and affordability in one place.
+              Tired of waiting in long queues at booking counters? Guzel Travels is your one-stop online e-ticketing platform offering cost-effective options for both domestic and international travel.
             </p>
             <p className="leading-relaxed text-foreground/80">
               With virtual presence across major Pakistani cities, we stand out by providing budget-friendly flight options on every airline you trust — and a few you'll be glad to discover.
@@ -54,7 +50,7 @@ function Page() {
               <div>
                 <h3 className="font-heading text-xl text-[var(--navy)] mb-1">International Flights</h3>
                 <p className="text-sm text-foreground/70 leading-relaxed">
-                  Wherever you need to go, we'll get you there in style. Search a wide range of airlines and destinations to find the perfect fit for your next vacation.
+                  Wherever you need to go, we'll get you there in style. Search a wide range of airlines and destinations.
                 </p>
               </div>
             </div>
@@ -65,7 +61,7 @@ function Page() {
               <div>
                 <h3 className="font-heading text-xl text-[var(--navy)] mb-1">Domestic Flights</h3>
                 <p className="text-sm text-foreground/70 leading-relaxed">
-                  Find the best prices on one-way or return flights across Pakistan — Karachi, Islamabad, Lahore, Peshawar, Quetta and beyond.
+                  Best prices on one-way or return flights across Pakistan — Karachi, Islamabad, Lahore, Peshawar, Quetta and beyond.
                 </p>
               </div>
             </div>

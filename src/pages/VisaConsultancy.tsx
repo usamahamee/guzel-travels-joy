@@ -1,32 +1,28 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ShieldCheck, Globe2 } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 
-export const Route = createFileRoute("/visa-consultancy")({
-  head: () => ({
-    meta: [
-      { title: "Visa Consultancy in Lahore — UK, USA, Canada, Australia | Guzel Travels" },
-      { name: "description", content: "Trusted visa consultants in Lahore for UK, EU, Australia, New Zealand, Canada, USA and Turkey. Visit visa, immigration and documentation support." },
-      { property: "og:title", content: "Visa Consultancy | Guzel Travels" },
-      { property: "og:description", content: "Professional visa & immigration consultants in Pakistan." },
-      { property: "og:url", content: "https://guzeltravels.com/visa-consultancy" },
-      { property: "og:type", content: "website" },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1569974498991-d3c12a504f95?auto=format&fit=crop&w=1200&q=80" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Visa Consultancy | Guzel Travels" },
-      { name: "twitter:description", content: "Professional visa & immigration consultants in Pakistan." },
-      { name: "twitter:image", content: "https://images.unsplash.com/photo-1569974498991-d3c12a504f95?auto=format&fit=crop&w=1200&q=80" },
-    ],
-    links: [{ rel: "canonical", href: "https://guzeltravels.com/visa-consultancy" }],
-  }),
-  component: Page,
-});
-
 const COUNTRIES = ["United Kingdom", "European Union", "Australia", "New Zealand", "Canada", "USA", "Turkey", "Schengen"];
 
-function Page() {
+export default function VisaConsultancy() {
   return (
     <>
+      <Helmet>
+        <title>Visa Consultancy in Lahore — UK, USA, Canada, Australia | Guzel Travels</title>
+        <meta name="description" content="Trusted visa consultants in Lahore for UK, EU, Australia, New Zealand, Canada, USA and Turkey. Visit visa, immigration and documentation support." />
+        <link rel="canonical" href="https://guzeltravels.com/visa-consultancy" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Visa Consultancy | Guzel Travels" />
+        <meta property="og:description" content="Professional visa & immigration consultants in Pakistan." />
+        <meta property="og:url" content="https://guzeltravels.com/visa-consultancy" />
+        <meta property="og:image" content="https://images.unsplash.com/photo-1569974498991-d3c12a504f95?auto=format&fit=crop&w=1200&q=80" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Visa Consultancy | Guzel Travels" />
+        <meta name="twitter:description" content="Professional visa & immigration consultants in Pakistan." />
+        <meta name="twitter:image" content="https://images.unsplash.com/photo-1569974498991-d3c12a504f95?auto=format&fit=crop&w=1200&q=80" />
+      </Helmet>
+
       <PageHero
         title="Visa Consultancy"
         subtitle="What we offer"
@@ -41,7 +37,7 @@ function Page() {
               Guzel Travels, your trusted immigration consultants in Lahore, Pakistan, extend professional guidance to individuals, students and families. Our comprehensive services encompass visas for tourism, study and employment permits.
             </p>
             <p className="leading-relaxed text-foreground/80">
-              With headquarters in Lahore, we maintain strong connections in the UK and European Union. Our proficient consultant team helps you compile documents and facilitates a seamless visa application process — resulting in speedy approvals.
+              With headquarters in Lahore, we maintain strong connections in the UK and European Union. Our proficient consultant team helps you compile documents and facilitates a seamless visa application process.
             </p>
             <Link to="/contact" className="btn-gold mt-7">Book an Appointment</Link>
           </div>

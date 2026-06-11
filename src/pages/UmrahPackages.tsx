@@ -1,26 +1,7 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { CheckCircle2, FileCheck2, Bus, Building2, Plane } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
-
-export const Route = createFileRoute("/umrah-packages")({
-  head: () => ({
-    meta: [
-      { title: "Umrah Packages from Pakistan | Guzel Travels" },
-      { name: "description", content: "Affordable Umrah packages from Lahore with fastest visa processing, comfortable hotels in Makkah & Madinah, VIP transport and air tickets." },
-      { property: "og:title", content: "Umrah Packages | Guzel Travels" },
-      { property: "og:description", content: "Spiritual Umrah journeys crafted with care — from Pakistan to Makkah & Madinah." },
-      { property: "og:url", content: "https://guzeltravels.com/umrah-packages" },
-      { property: "og:type", content: "website" },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=1200&q=80" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Umrah Packages | Guzel Travels" },
-      { name: "twitter:description", content: "Spiritual Umrah journeys crafted with care — from Pakistan to Makkah & Madinah." },
-      { name: "twitter:image", content: "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=1200&q=80" },
-    ],
-    links: [{ rel: "canonical", href: "https://guzeltravels.com/umrah-packages" }],
-  }),
-  component: Page,
-});
 
 const HIGHLIGHTS = [
   "Fastest Umrah visa processing",
@@ -36,9 +17,24 @@ const INCLUDES = [
   { icon: Plane, t: "Air Ticket", d: "Round-trip air tickets from Pakistan included." },
 ];
 
-function Page() {
+export default function UmrahPackages() {
   return (
     <>
+      <Helmet>
+        <title>Umrah Packages from Pakistan | Guzel Travels</title>
+        <meta name="description" content="Affordable Umrah packages from Lahore with fastest visa processing, comfortable hotels in Makkah & Madinah, VIP transport and air tickets." />
+        <link rel="canonical" href="https://guzeltravels.com/umrah-packages" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Umrah Packages | Guzel Travels" />
+        <meta property="og:description" content="Spiritual Umrah journeys crafted with care — from Pakistan to Makkah & Madinah." />
+        <meta property="og:url" content="https://guzeltravels.com/umrah-packages" />
+        <meta property="og:image" content="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=1200&q=80" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Umrah Packages | Guzel Travels" />
+        <meta name="twitter:description" content="Spiritual Umrah journeys crafted with care — from Pakistan to Makkah & Madinah." />
+        <meta name="twitter:image" content="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=1200&q=80" />
+      </Helmet>
+
       <PageHero
         title="Umrah Packages"
         subtitle="Restart Your Spiritual Journey"
@@ -50,7 +46,7 @@ function Page() {
             <p className="font-subhead italic text-[var(--gold)] text-lg mb-1">Welcome</p>
             <h2 className="font-heading text-3xl sm:text-4xl text-[var(--navy)] mb-5">Umrah Package</h2>
             <p className="leading-relaxed text-foreground/80 mb-6">
-              Welcome to our exclusive Umrah package from Pakistan, where we offer a transformative and deeply spiritual pilgrimage experience to the blessed cities of Makkah and Madinah. Embark on a journey of a lifetime as you fulfill your spiritual obligations.
+              Welcome to our exclusive Umrah package from Pakistan, where we offer a transformative and deeply spiritual pilgrimage experience to the blessed cities of Makkah and Madinah.
             </p>
             <ul className="space-y-3 mb-6">
               {HIGHLIGHTS.map((h) => (

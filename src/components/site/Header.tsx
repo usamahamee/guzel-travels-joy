@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, NavLink } from "react-router-dom";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
@@ -29,7 +29,7 @@ export function Header() {
 
           <ul className="hidden lg:flex items-center gap-9 text-sm uppercase tracking-wider font-medium">
             <li>
-              <Link to="/" activeOptions={{ exact: true }} className="hover:text-[var(--gold)] transition" activeProps={{ className: "text-[var(--gold)]" }}>Home</Link>
+              <NavLink to="/" end className={({ isActive }) => `hover:text-[var(--gold)] transition ${isActive ? "text-[var(--gold)]" : ""}`}>Home</NavLink>
             </li>
             <li className="relative group">
               <button className="flex items-center gap-1 hover:text-[var(--gold)] transition">
@@ -46,7 +46,7 @@ export function Header() {
               </div>
             </li>
             <li>
-              <Link to="/contact" className="hover:text-[var(--gold)] transition" activeProps={{ className: "text-[var(--gold)]" }}>Contact Us</Link>
+              <NavLink to="/contact" className={({ isActive }) => `hover:text-[var(--gold)] transition ${isActive ? "text-[var(--gold)]" : ""}`}>Contact Us</NavLink>
             </li>
           </ul>
 
